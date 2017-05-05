@@ -1,4 +1,4 @@
-package dit;
+package bico;
 
 public class NOCB {
 	public void a() {

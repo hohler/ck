@@ -1,4 +1,4 @@
-package dit;
+package bico;
 
 public class NOMWMOP {
 	public void a(Object p) {
