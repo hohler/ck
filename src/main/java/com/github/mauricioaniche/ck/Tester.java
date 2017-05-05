@@ -18,6 +18,8 @@ public class Tester {
 			
 			System.out.println("NOCB: " + result.getNocb());
 			
+			System.out.println("NONA: " + result.getNona());
+			
 			System.out.println("====================================");
 		}
 	}
