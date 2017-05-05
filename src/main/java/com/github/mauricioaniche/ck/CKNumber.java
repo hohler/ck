@@ -26,6 +26,12 @@ public class CKNumber {
 	private int nosi;
 	private int loc;
 	
+	// bico project
+	private int nocb; // number of catch blocks
+	private int nonc; // number of null checks
+	private int nona; // number of null assignments
+	private int nomwmop; // number of methods with more than 1 parameter
+	
 	private Map<String, Integer> specific;
 	private boolean error; 
 
@@ -197,7 +203,38 @@ public class CKNumber {
 	public void setLoc(int loc) {
 		this.loc = loc;
 	}
+	
+	public int getNocb() {
+		return nocb;
+	}
 
+	public void setNocb(int nocb) {
+		this.nocb = nocb;
+	}
+
+	public int getNonc() {
+		return nonc;
+	}
+
+	public void setNonc(int nonc) {
+		this.nonc = nonc;
+	}
+
+	public int getNona() {
+		return nona;
+	}
+
+	public void setNona(int nona) {
+		this.nona = nona;
+	}
+
+	public int getNomwmop() {
+		return nomwmop;
+	}
+
+	public void setNomwmop(int nomwmop) {
+		this.nomwmop = nomwmop;
+	}
 
 	public boolean isError() {
 		return error;
@@ -212,7 +249,7 @@ public class CKNumber {
 		return "CKNumber [file=" + file + ", className=" + className + ", type=" + type + ", dit=" + dit + ", noc="
 				+ noc + ", wmc=" + wmc + ", cbo=" + cbo + ", lcom=" + lcom + ", rfc=" + rfc + ", nom=" + nom + ", nopm="
 				+ nopm + ", nosm=" + nosm + ", nof=" + nof + ", nopf=" + nopf + ", nosf=" + nosf + ", nosi=" + nosi
-				+ ", loc=" + loc + ", specific=" + specific + ", error=" + error + "]";
+				+ ", loc=" + loc + ", specific=" + specific + ", error=" + error + ", nocb=" + nocb + ", nonc=" + nonc + "nona=" + nona + "nomwmop=" + nomwmop + "]";
 	}
 
 

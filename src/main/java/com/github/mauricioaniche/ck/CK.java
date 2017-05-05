@@ -11,20 +11,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 
-import com.github.mauricioaniche.ck.metric.CBO;
-import com.github.mauricioaniche.ck.metric.DIT;
-import com.github.mauricioaniche.ck.metric.LCOM;
-import com.github.mauricioaniche.ck.metric.Metric;
-import com.github.mauricioaniche.ck.metric.NOC;
-import com.github.mauricioaniche.ck.metric.NOF;
-import com.github.mauricioaniche.ck.metric.NOM;
-import com.github.mauricioaniche.ck.metric.NOPF;
-import com.github.mauricioaniche.ck.metric.NOPM;
-import com.github.mauricioaniche.ck.metric.NOSF;
-import com.github.mauricioaniche.ck.metric.NOSI;
-import com.github.mauricioaniche.ck.metric.NOSM;
-import com.github.mauricioaniche.ck.metric.RFC;
-import com.github.mauricioaniche.ck.metric.WMC;
+import com.github.mauricioaniche.ck.metric.*;
 import com.google.common.collect.Lists;
 
 public class CK {
@@ -96,7 +83,7 @@ public class CK {
 	private List<Metric> defaultMetrics() {
 		return new ArrayList<>(Arrays.asList(new DIT(), new NOC(), new WMC(), new CBO(), new LCOM(), new RFC(), new NOM(),
 				new NOF(), new NOPF(), new NOSF(),
-				new NOPM(), new NOSM(), new NOSI()));
+				new NOPM(), new NOSM(), new NOSI(), new NOMWMOP()/*, new NOCB(), new NONC(), new NONA(), new NOMWMOP()*/));
 	}
 
 	private List<Metric> userMetrics() {
