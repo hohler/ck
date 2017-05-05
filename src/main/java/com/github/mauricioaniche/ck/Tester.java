@@ -10,7 +10,13 @@ public class Tester {
 		for(CKNumber result : report.all()) {
 			if(result.isError()) continue;
 			
+			System.out.println("File: "+result.getFile());
+			
 			System.out.println("NOMWMOP: " + result.getNomwmop());
+			
+			System.out.println("NONC: " + result.getNonc());
+			
+			System.out.println("====================================");
 		}
 	}
 }
