@@ -83,7 +83,7 @@ public class CK {
 	private List<Metric> defaultMetrics() {
 		return new ArrayList<>(Arrays.asList(new DIT(), new NOC(), new WMC(), new CBO(), new LCOM(), new RFC(), new NOM(),
 				new NOF(), new NOPF(), new NOSF(),
-				new NOPM(), new NOSM(), new NOSI(), new NOMWMOP(), new NONC()/*, new NOCB(), new NONC(), new NONA(), new NOMWMOP()*/));
+				new NOPM(), new NOSM(), new NOSI(), new NOMWMOP(), new NONC(), new NOCB()/*, new NONA()*/));
 	}
 
 	private List<Metric> userMetrics() {

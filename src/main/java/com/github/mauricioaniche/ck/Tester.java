@@ -16,6 +16,8 @@ public class Tester {
 			
 			System.out.println("NONC: " + result.getNonc());
 			
+			System.out.println("NOCB: " + result.getNocb());
+			
 			System.out.println("====================================");
 		}
 	}
