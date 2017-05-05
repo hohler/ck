@@ -22,8 +22,14 @@ public class NONC extends ASTVisitor implements Metric {
 		
 		if(left instanceof InfixExpression) this.visit((InfixExpression) left);
 		if(right instanceof InfixExpression) this.visit((InfixExpression) right);
-		if(left instanceof ParenthesizedExpression) this.visit((InfixExpression) ((ParenthesizedExpression) left).getExpression());
-		if(right instanceof ParenthesizedExpression) this.visit((InfixExpression) ((ParenthesizedExpression) right).getExpression());
+		
+		if(left instanceof ParenthesizedExpression) {
+			this.visit((ParenthesizedExpression) left);
+		}
+		
+		if(right instanceof ParenthesizedExpression) {
+			this.visit((ParenthesizedExpression) right);
+		}
 		
 		if(!(left instanceof InfixExpression && !(right instanceof InfixExpression))) {
 			Operator o = node.getOperator();
@@ -34,14 +40,14 @@ public class NONC extends ASTVisitor implements Metric {
 				}
 			}
 		}
-		
 		return false;
 	}
 	
 	
 	@Override
 	public boolean visit(ParenthesizedExpression node) {
-		this.visit((InfixExpression) node.getExpression());
+		Expression e = node.getExpression();
+		if(e instanceof InfixExpression) this.visit((InfixExpression) e);
 		return false;
 	}
 

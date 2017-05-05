@@ -5,6 +5,8 @@ public class Tester {
 		
 		String path = "fixtures/bico/";
 		
+		//path = "C:\\eclipse\\target\\repositories\\flume";
+		
 		CKReport report = new CK().calculate(path);
 		
 		for(CKNumber result : report.all()) {

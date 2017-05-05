@@ -24,8 +24,31 @@ public class NONA extends ASTVisitor implements Metric {
 		Expression right = node.getRightHandSide();
 		Operator o = node.getOperator();
 		
-		if(left instanceof ParenthesizedExpression || left instanceof ConditionalExpression) return visit((ConditionalExpression) left);
+		
+		if(left instanceof ConditionalExpression) {
+			visit((ConditionalExpression) left);
+		}
+		if(right instanceof ConditionalExpression) {
+			visit((ConditionalExpression) right);
+		}
+		
+		if(left instanceof ParenthesizedExpression) {
+			Expression e = ((ParenthesizedExpression) left).getExpression();
+			if(e instanceof ConditionalExpression) visit((ConditionalExpression) left);
+		}
+
+		if(right instanceof ParenthesizedExpression) {
+			Expression e = ((ParenthesizedExpression) right).getExpression();
+			if(e instanceof ConditionalExpression) visit((ConditionalExpression) right);
+		}
+
+		/*
+		if(left instanceof ParenthesizedExpression || left instanceof ConditionalExpression) {
+			
+			return visit((ConditionalExpression) left);
+		}
 		if(right instanceof ParenthesizedExpression || right instanceof ConditionalExpression) return visit((ConditionalExpression) right);
+		*/
 		
 		if(o == Operator.ASSIGN) {
 			if(left instanceof NullLiteral || right instanceof NullLiteral) nullAssignments++;
