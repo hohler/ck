@@ -34,12 +34,12 @@ public class NONA extends ASTVisitor implements Metric {
 		
 		if(left instanceof ParenthesizedExpression) {
 			Expression e = ((ParenthesizedExpression) left).getExpression();
-			if(e instanceof ConditionalExpression) visit((ConditionalExpression) left);
+			if(e instanceof ConditionalExpression) visit((ConditionalExpression) e);
 		}
 
 		if(right instanceof ParenthesizedExpression) {
 			Expression e = ((ParenthesizedExpression) right).getExpression();
-			if(e instanceof ConditionalExpression) visit((ConditionalExpression) right);
+			if(e instanceof ConditionalExpression) visit((ConditionalExpression) e);
 		}
 
 		/*
